@@ -2,6 +2,8 @@ import csv
 import argparse
 import time
 
+from heuristic import fungsi_heuristik
+
 def load_data(filepath):
     """Fungsi murni untuk membaca CSV tanpa library eksternal."""
     nodes = []
@@ -47,6 +49,12 @@ def main():
 
     # 2. Fungsi Algoritma Heuristik
     print("[*] Menjalankan Algoritma Heuristik (Greedy)...")
+    # Memanggil fungsi kamu dengan mengalirkan output dari load_data
+    hasil_heuristik = fungsi_heuristik(dist_matrix, nodes)
+    
+    # Menampilkan hasil rute nama dan waktu eksekusi ke Terminal CLI
+    print(f"[+] Rute Heuristik : {' -> '.join(hasil_heuristik['route_names'])}")
+    print(f"[+] Waktu Eksekusi : {hasil_heuristik['execution_time_ms']:.4f} ms")
 
     # 3. Panggil Fungsi Algoritma Eksak
     print("\n[*] Menjalankan Algoritma Eksak (DFS/Backtracking)...")
