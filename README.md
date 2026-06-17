@@ -12,11 +12,13 @@ Algoritma Heuristik berbasis pendekatan Greedy (Nearest Neighbor) yang ditulis d
 * **Loop Pencarian (Dalam):** Di setiap langkah iterasi luar, algoritma melakukan *scanning* linear ke seluruh simpul (N lokasi) untuk mengecek kondisi `if not visited[next_node]` dan mencari nilai jarak terkecil pada `distance_matrix`.
 * **Kombinasi Operasi:** Jumlah operasi perbandingan jarak secara matematis membentuk deret aritmatika:
   $$\text{Total Operasi} \approx (N-1) \times N = N^2 - N \implies O(N^2)$$
+  
+### Tabel Analisis Kompleksitas Waktu
 
-| Skenario        | Kompleksitas Waktu | Keterangan                                        | Skenario | Kompleksitas Waktu | Keterangan |
+| Skenario | Kompleksitas Waktu | Keterangan |
 | :--- | :--- | :--- |
 | **Best Case** | $O(N^2)$ | Tetap harus memindai seluruh matriks untuk memastikan jarak terdekat. |
-| **Average Case**| $O(N^2)$ | Rata-rata pencarian tetangga terdekat di setiap titik. |
+| **Average Case** | $O(N^2)$ | Rata-rata pencarian tetangga terdekat di setiap titik. |
 | **Worst Case** | $O(N^2)$ | Seluruh kombinasi node tidak terkunci dan harus divalidasi satu per satu. |
 
 ### 2. Kompleksitas Ruang (Space Complexity): $O(N)$
