@@ -53,9 +53,8 @@ Kompleksitas ruang dari implementasi algoritma eksak ini adalah $O(N)$ (Linear),
 **Alokasi Memori Efektif:** 
 * **Tumpukan Rekursi (Call Stack):** Fungsi backtrack memanggil dirinya sendiri sedalam maksimal N kali (sebanyak jumlah lokasi).
 * **Struktur Data Sementara:** Himpunan visited (Set) dan current_route (List) secara dinamis bertambah dan berkurang (pop/remove), dengan ukuran maksimal yang tidak akan pernah melebihi $N$ elemen.
-Matriks Jarak: Penggunaan memori matriks 2D (O(N^2)) tidak dihitung sebagai beban memori bawaan algoritma eksak karena data tersebut diteruskan oleh modul I/O dan bersifat read-only selama rekursi berjalan.
+* **Matriks Jarak:** Penggunaan memori matriks 2D (O(N^2)) tidak dihitung sebagai beban memori bawaan algoritma eksak karena data tersebut diteruskan oleh modul I/O dan bersifat read-only selama rekursi berjalan.
 
----
 ## Kesimpulan Bisnis & Analisis TCO
 
 **Kesimpulan Finansial Berdasarkan TCO (Total Cost of Ownership):**
@@ -71,3 +70,5 @@ Perusahaan sebaiknya baru mempertimbangkan investasi pada Algoritma B (Eksak) ap
 $$\text{Titik Impas Harga Bensin} = \frac{52051.68}{0.04} = \text{Rp } 1.301.292 \text{ per Liter}$$
 
 **Keputusan Bisnis Final:** Manajemen disarankan untuk **tetap bertahan menggunakan algoritma pencarian heuristik lama**. Algoritma eksak tingkat lanjut baru masuk akal secara finansial apabila harga BBM di pasar mengalami krisis hiperinflasi hingga menyentuh angka **Rp 1.301.292 per Liter**. Pada skenario ekonomi normal, investasi algoritma ini akan merugikan perusahaan.
+
+---
