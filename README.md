@@ -37,7 +37,8 @@ Algoritma Eksak berbasis pendekatan Depth-First Search (DFS) dengan teknik Backt
 **Breakdown Analisis:**
 * **Percabangan (Branching Factor):** Pada langkah pertama, kurir memiliki $N-1$ pilihan lokasi. Pada langkah kedua, tersisa $N-2$ pilihan, dan seterusnya hingga mencapai 1 pilihan terakhir. Ini menghasilkan pengecekan seluruh kemungkinan permutasi rute.
 * **Mekanisme Pruning:** Algoritma menggunakan kondisi if current_distance >= min_distance: untuk memotong cabang rekursi secara dini. Meskipun ini memangkas jutaan iterasi yang tidak perlu, batas atas (upper bound) komputasi matematisnya tidak berubah.
-* **Kombinasi Operasi:** Jumlah permutasi rute yang dieksplorasi membentuk perkalian faktorial:$$\text{Total Kombinasi} \approx (N-1) \times (N-2) \times \dots \times 1 = (N-1)! \implies O(N!)$
+Kombinasi Operasi: Jumlah permutasi rute yang dieksplorasi membentuk perkalian faktorial:
+$$\text{Total Kombinasi} \approx (N-1) \times (N-2) \times \dots \times 1 = (N-1)! \implies O(N!)$$
 
 ### Tabel Analisis Kompleksitas Waktu
 | Skenario | Kompleksitas Waktu | Keterangan | 
@@ -52,6 +53,21 @@ Kompleksitas ruang dari implementasi algoritma eksak ini adalah $O(N)$ (Linear),
 **Alokasi Memori Efektif:** 
 * **Tumpukan Rekursi (Call Stack):** Fungsi backtrack memanggil dirinya sendiri sedalam maksimal N kali (sebanyak jumlah lokasi).
 * **Struktur Data Sementara:** Himpunan visited (Set) dan current_route (List) secara dinamis bertambah dan berkurang (pop/remove), dengan ukuran maksimal yang tidak akan pernah melebihi $N$ elemen.
-* **Matriks Jarak:** Penggunaan memori matriks 2D ($O(N^2)$) tidak dihitung sebagai beban memori bawaan algoritma eksak karena data tersebut diteruskan oleh modul I/O dan bersifat read-only selama rekursi berjalan.
+Matriks Jarak: Penggunaan memori matriks 2D (O(N^2)) tidak dihitung sebagai beban memori bawaan algoritma eksak karena data tersebut diteruskan oleh modul I/O dan bersifat read-only selama rekursi berjalan.
 
 ---
+## Kesimpulan Bisnis & Analisis TCO
+
+**Kesimpulan Finansial Berdasarkan TCO (Total Cost of Ownership):**
+Berdasarkan hasil simulasi komputasi, arsitektur **Algoritma A (Heuristik)** adalah pilihan yang paling direkomendasikan secara absolut untuk kondisi operasional perusahaan. Baik pada Skenario Subsidi (Rp 5.000/L) maupun Skenario Krisis (Rp 20.000/L), penggunaan algoritma Heuristik jauh lebih ekonomis. 
+
+Hal ini disebabkan oleh karakteristik *Traveling Salesperson Problem* (TSP) di mana pencarian rute eksak memakan waktu komputasi yang berat secara eksponensial. Algoritma Eksak memakan biaya *Cloud Server* rata-rata sekitar Rp 52.000 hingga Rp 65.000 sekali jalan, sementara efisiensi jarak yang ditawarkan tidak sebanding (hanya menghemat bahan bakar sebesar 0.04 Liter dibandingkan pendekatan Heuristik).
+
+**Perhitungan Titik Impas (Break-Even Point):**
+Perusahaan sebaiknya baru mempertimbangkan investasi pada Algoritma B (Eksak) apabila penghematan biaya bensin lebih besar menutupi pembengkakan tagihan komputasi awan. Mengambil sampel data dari skenario krisis:
+* **Selisih Biaya Server:** Rp 52.055,82 - Rp 4,14 = Rp 52.051,68
+* **Selisih Efisiensi BBM:** 3.0075 Liter - 2.9675 Liter = 0.04 Liter
+
+$$\text{Titik Impas Harga Bensin} = \frac{52051.68}{0.04} = \text{Rp } 1.301.292 \text{ per Liter}$$
+
+**Keputusan Bisnis Final:** Manajemen disarankan untuk **tetap bertahan menggunakan algoritma pencarian heuristik lama**. Algoritma eksak tingkat lanjut baru masuk akal secara finansial apabila harga BBM di pasar mengalami krisis hiperinflasi hingga menyentuh angka **Rp 1.301.292 per Liter**. Pada skenario ekonomi normal, investasi algoritma ini akan merugikan perusahaan.
